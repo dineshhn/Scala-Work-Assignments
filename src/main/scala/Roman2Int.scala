@@ -45,7 +45,7 @@ object Roman2Int {
     var i=0
 
     //Create Roman numerals Map
-    val RomanMap= scala.collection.mutable.Map( "M" -> 1000,
+    val RomanMap= scala.collection.immutable.Map( "M" -> 1000,
       "D"  -> 500, "C"  -> 100,
       "L"  -> 50,  "X"  -> 10,
       "I"  -> 1,   "IV" -> 4,
@@ -68,12 +68,13 @@ object Roman2Int {
 
   def main(args: Array[String]): Unit = {
 
-    //val romanval="MCMXCIV" //val romanval="III"
+    //val romanval="MCMXCIV" 
+    //val romanval="III"
 
     println("Enter the input\n")
-    val inputval=scala.io.StdIn.readLine()
+    val inputval=scala.io.StdIn.readLine().toUpperCase()
 
- println(roman2intFunc(inputval))
+    println(roman2intFunc(inputval))
 
   }
 }
